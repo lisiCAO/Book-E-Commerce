@@ -1,11 +1,9 @@
-﻿using System;
-using BookWeb.Models;
+﻿using Book.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Book.DataAccess.Repository.IRepository;
-using Book.Models;
 
-namespace BookWeb.Areas.Customer.Customer.Controllers
+namespace BookWeb.Areas.Customer.Controllers
 {
     [Area("Customer")]
     public class HomeController : Controller

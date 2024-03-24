@@ -35,4 +35,12 @@
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Areas\Customer\Controllers\" />
+    <None Remove="Areas\Customer\Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Customer\Controllers\" />
+    <Folder Include="Areas\Customer\Views\" />
+  </ItemGroup>
 </Project>
