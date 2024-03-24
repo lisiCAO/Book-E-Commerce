@@ -1,5 +1,6 @@
-﻿using System;
+﻿using Book.DataAccess.Data;
 using Book.DataAccess.Repository.IRepository;
+using Book.Models;
 
 namespace Book.DataAccess.Repository
 {
@@ -10,8 +11,6 @@ namespace Book.DataAccess.Repository
         {
             _db = db;
         }
-
-
 
         public void Update(Product obj)
         {

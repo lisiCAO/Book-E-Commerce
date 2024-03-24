@@ -32,4 +32,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.3" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Book.Models\Book.Models.csproj" />
+  </ItemGroup>
 </Project>

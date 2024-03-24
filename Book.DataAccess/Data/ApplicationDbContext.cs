@@ -1,6 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection.Emit;
+﻿using Book.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace Book.DataAccess.Data
 {

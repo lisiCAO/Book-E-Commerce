@@ -1,6 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
+using Book.DataAccess.Data;
+using Book.DataAccess.Repository.IRepository;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Book.DataAccess.Repository
 {

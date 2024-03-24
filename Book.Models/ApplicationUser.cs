@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
 namespace Book.Models

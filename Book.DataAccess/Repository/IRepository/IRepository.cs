@@ -3,7 +3,8 @@ using System.Linq.Expressions;
 
 namespace Book.DataAccess.Repository.IRepository
 {
-	public interface IRepository
+	public interface IRepository<T> where T : class
+ 
 	{
         //T - Category
         IEnumerable<T> GetAll(string? includeProperties = null);

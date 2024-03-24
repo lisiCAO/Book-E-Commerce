@@ -2,6 +2,8 @@
 using BookWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Book.DataAccess.Repository.IRepository;
+using Book.Models;
 
 namespace BookWeb.Areas.Customer.Customer.Controllers
 {
@@ -37,7 +39,7 @@ namespace BookWeb.Areas.Customer.Customer.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new Book.Models.ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

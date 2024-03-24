@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Book.DataAccess.Data;
+using Book.DataAccess.Repository;
+using Book.DataAccess.Repository.IRepository;
+using Book.Utility;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 

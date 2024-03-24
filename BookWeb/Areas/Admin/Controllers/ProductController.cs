@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Data;
+using Book.Utility;
+using Book.DataAccess.Repository.IRepository;
+using Book.Models;
+using Book.Models.ViewModels;
 
 namespace BookWeb.Areas.Admin.Controllers
 {
