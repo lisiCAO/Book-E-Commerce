@@ -20,16 +20,11 @@ namespace BookWeb.Areas.Admin.Controllers
             _unitOfWork = unitOfWork;
             _webHostEnvironment = webHostEnvironment;
         }
-        public IActionResult Index(string searchString)
+        public IActionResult Index()
         {
-            var productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
+            List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
 
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                productList = productList.Where(p => p.Title.Contains(searchString) || p.Description.Contains(searchString));
-            }
-
-            return View(productList.ToList());
+            return View(objProductList);
         }
 
         public IActionResult Upsert(int? id)
