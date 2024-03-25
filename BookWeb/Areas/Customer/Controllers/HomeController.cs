@@ -17,9 +17,17 @@ namespace BookWeb.Areas.Customer.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string searchString)
         {
-            IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
+            var productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                productList = productList.Where(p => p.Title.Contains(searchString)
+                                                || p.Description.Contains(searchString)
+                                                || p.Author.Contains(searchString));
+            }
+
             return View(productList);
         }
 
@@ -41,4 +49,3 @@ namespace BookWeb.Areas.Customer.Controllers
         }
     }
 }
-

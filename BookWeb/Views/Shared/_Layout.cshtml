@@ -30,6 +30,15 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="Customer" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        @if (!User.IsInRole(SD.Role_Admin))
+                        {
+                            <li>
+                                <form asp-controller="Home" asp-action="Index" method="get" class="d-flex ms-auto">
+                                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchString">
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                            </li>
+                        }
                         @if (User.IsInRole(SD.Role_Admin))
                         {
                             <li class="nav-item dropdown">
@@ -75,4 +84,3 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-

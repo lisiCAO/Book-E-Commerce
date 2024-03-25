@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Data;
@@ -21,11 +20,16 @@ namespace BookWeb.Areas.Admin.Controllers
             _unitOfWork = unitOfWork;
             _webHostEnvironment = webHostEnvironment;
         }
-        public IActionResult Index()
+        public IActionResult Index(string searchString)
         {
-            List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
+            var productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
 
-            return View(objProductList);
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                productList = productList.Where(p => p.Title.Contains(searchString) || p.Description.Contains(searchString));
+            }
+
+            return View(productList.ToList());
         }
 
         public IActionResult Upsert(int? id)
@@ -145,4 +149,3 @@ namespace BookWeb.Areas.Admin.Controllers
         #endregion
     }
 }
-

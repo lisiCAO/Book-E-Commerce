@@ -1,8 +1,6 @@
-﻿using System;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Book.Utility;
-using System.Data;
 using Book.DataAccess.Repository.IRepository;
 using Book.Models;
 
